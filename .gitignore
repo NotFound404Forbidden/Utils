@@ -1,0 +1,6 @@
+src/packages/
+/src/packages
+src/*/bin/
+/src/*/bin
+src/*/obj/
+/src/*/obj
