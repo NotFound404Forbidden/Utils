@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.960
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{5BF8634A-3DF1-403C-AF3C-16129165491E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.Security", "Utils.Security\Utils.Security.csproj", "{5BF8634A-3DF1-403C-AF3C-16129165491E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

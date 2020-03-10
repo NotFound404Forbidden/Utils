@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Security.String.Cryptography
+namespace Utils.Security.String.Cryptography
 {
     /// <summary>
     /// 使用DES加密
@@ -10,16 +10,16 @@ namespace Security.String.Cryptography
     public class DES
     {
         //密钥
-        public static byte[] KEY = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
+        public byte[] KEY = new byte[] { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
         //向量
-        public static byte[] IV = new byte[] { 0x08, 0x07, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01 };
+        public byte[] IV = new byte[] { 0x08, 0x07, 0x06, 0x05, 0x04, 0x03, 0x02, 0x01 };
 
         /// <summary>
         /// 加密
         /// </summary>
         /// <param name="plaintext">明文</param>
         /// <returns>密文</returns>
-        public static string Encrypt(string plaintext)
+        public string Encrypt(string plaintext)
         {
             if (string.IsNullOrEmpty(plaintext))
                 throw new ArgumentNullException($"{nameof(plaintext)} must not be null or empty!");
@@ -53,7 +53,7 @@ namespace Security.String.Cryptography
         /// </summary>
         /// <param name="ciphertext">密文</param>
         /// <returns>明文</returns>
-        public static string Decrypt(string ciphertext)
+        public string Decrypt(string ciphertext)
         {
             if (string.IsNullOrEmpty(ciphertext))
                 throw new ArgumentNullException($"{nameof(ciphertext)} must not be null or empty!");
@@ -71,7 +71,7 @@ namespace Security.String.Cryptography
                 StreamReader sr = new StreamReader(cst);
                 return sr.ReadToEnd();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("DES decrypt falied!", ex);
             }

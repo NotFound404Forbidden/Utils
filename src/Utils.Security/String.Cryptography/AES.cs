@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Security.String.Cryptography
+namespace Utils.Security.String.Cryptography
 {
     public class AES
     {
@@ -12,7 +12,7 @@ namespace Security.String.Cryptography
         /// <param name="plaintext">明文</param>
         /// <param name="keys">keys</param>
         /// <returns>密文</returns>
-        public static string Encrypt(string plaintext, string key)
+        public string Encrypt(string plaintext, string key)
         {
             if (string.IsNullOrEmpty(plaintext))
                 throw new ArgumentNullException($"{nameof(plaintext)} must not be null or empty!");
@@ -42,7 +42,7 @@ namespace Security.String.Cryptography
         /// <param name="ciphertext">密文</param>
         /// <param name="keys">keys</param>
         /// <returns>明文</returns>
-        public static string Decrypt(string ciphertext, string key)
+        public string Decrypt(string ciphertext, string key)
         {
             if (string.IsNullOrEmpty(ciphertext))
                 throw new ArgumentNullException($"{nameof(ciphertext)} must not be null or empty!");

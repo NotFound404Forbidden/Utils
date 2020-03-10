@@ -2,19 +2,19 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Security.String.Cryptography
+namespace Utils.Security.String.Cryptography
 {
-    public class RSA 
+    public class RSA
     {
-        public static int RsaKeySize = 2048;
-        public static string PublicKeyFileName =  "RSA.Pub";
-        public static string PrivateKeyFileName = "RSA.PRIVATE";
+        public int RsaKeySize = 2048;
+        public string PublicKeyFileName = "RSA.Pub";
+        public string PrivateKeyFileName = "RSA.PRIVATE";
 
         /// <summary>
         /// 在给定路径中生成XML格式的私钥和公钥
         /// </summary>
         /// <param name="path">生成文件路径</param>
-        public static void GenerateKeys(string path)
+        public void GenerateKeys(string path)
         {
             if (!Directory.Exists(path))
                 throw new DirectoryNotFoundException($"path:{path} not fount!");
@@ -48,13 +48,13 @@ namespace Security.String.Cryptography
         /// <param name="plaintext">明文</param>
         /// <param name="publicKeyFilePath">公钥路径</param>
         /// <returns>密文</returns>
-        public static string Encrypt(string plaintext, string publicKeyFilePath)
+        public string Encrypt(string plaintext, string publicKeyFilePath)
         {
             if (string.IsNullOrEmpty(plaintext))
                 throw new ArgumentNullException($"{nameof(plaintext)} must not be null or empty!");
 
-            if(!File.Exists(publicKeyFilePath))
-                    throw new FileNotFoundException("Pub file is not founded!");
+            if (!File.Exists(publicKeyFilePath))
+                throw new FileNotFoundException("Pub file is not founded!");
 
             using (var rsa = new RSACryptoServiceProvider(RsaKeySize))
             {
@@ -84,7 +84,7 @@ namespace Security.String.Cryptography
         /// <param name="ciphertext">密文</param>
         /// <param name="privateKeyFilePath">私钥路径</param>
         /// <returns>明文</returns>
-        public static string Decrypt(string ciphertext, string privateKeyFilePath)
+        public string Decrypt(string ciphertext, string privateKeyFilePath)
         {
             if (string.IsNullOrEmpty(ciphertext))
                 throw new ArgumentNullException($"{nameof(ciphertext)} must not be null or empty!");
@@ -102,7 +102,7 @@ namespace Security.String.Cryptography
                     var bytesPlainText = rsa.Decrypt(bytesEncrypted, false);
                     return System.Text.Encoding.Unicode.GetString(bytesPlainText);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     throw new Exception("Decrypt failed", e);
                 }

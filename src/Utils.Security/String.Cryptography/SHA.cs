@@ -1,11 +1,11 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Security.String.Cryptography
+namespace Utils.Security.String.Cryptography
 {
     public class SHA
     {
-        public static string SHAmd5Encrypt(string plaintext)
+        public string SHAmd5Encrypt(string plaintext)
         {
             var bytes = Encoding.Default.GetBytes(plaintext);//求Byte[]数组  
             var Md5 = new MD5CryptoServiceProvider();
@@ -13,7 +13,7 @@ namespace Security.String.Cryptography
             return Base64To16(encryptbytes);//将Byte[]数组转为净荷明文(其实就是字符串)  
         }
 
-        public static string SHA1Encrypt(string plaintext)
+        public string SHA1Encrypt(string plaintext)
         {
             var bytes = Encoding.Default.GetBytes(plaintext);
             var SHA = new SHA1CryptoServiceProvider();
@@ -21,7 +21,7 @@ namespace Security.String.Cryptography
             return Base64To16(encryptbytes);
         }
 
-        public static string SHA256Encrypt(string plaintext)
+        public string SHA256Encrypt(string plaintext)
         {
             var bytes = Encoding.Default.GetBytes(plaintext);
             var SHA256 = new SHA256CryptoServiceProvider();
@@ -29,7 +29,7 @@ namespace Security.String.Cryptography
             return Base64To16(encryptbytes);
         }
 
-        public static string SHA384Encrypt(string plaintext)
+        public string SHA384Encrypt(string plaintext)
         {
             var bytes = Encoding.Default.GetBytes(plaintext);
             var SHA384 = new SHA384CryptoServiceProvider();
@@ -37,7 +37,7 @@ namespace Security.String.Cryptography
             return Base64To16(encryptbytes);
         }
 
-        public static string SHA512Encrypt(string plaintext)
+        public string SHA512Encrypt(string plaintext)
         {
             var bytes = Encoding.Default.GetBytes(plaintext);
             var SHA512 = new SHA512CryptoServiceProvider();
@@ -45,7 +45,7 @@ namespace Security.String.Cryptography
             return Base64To16(encryptbytes);
         }
 
-        private static string Base64To16(byte[] buffer)
+        private string Base64To16(byte[] buffer)
         {
             string md_str = string.Empty;
             for (int i = 0; i < buffer.Length; i++)
