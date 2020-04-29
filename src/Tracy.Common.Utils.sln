@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.Security", "Utils.Security\Utils.Security.csproj", "{5BF8634A-3DF1-403C-AF3C-16129165491E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils.FileConverter", "Utils.FileConverter\Utils.FileConverter.csproj", "{32254356-A56D-4E57-9F7E-A2050F67E0F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils.Common", "Utils.Common\Utils.Common.csproj", "{FB9173E6-55E4-41B5-8778-3AA5EB26AF7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5BF8634A-3DF1-403C-AF3C-16129165491E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF8634A-3DF1-403C-AF3C-16129165491E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF8634A-3DF1-403C-AF3C-16129165491E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32254356-A56D-4E57-9F7E-A2050F67E0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32254356-A56D-4E57-9F7E-A2050F67E0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32254356-A56D-4E57-9F7E-A2050F67E0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32254356-A56D-4E57-9F7E-A2050F67E0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9173E6-55E4-41B5-8778-3AA5EB26AF7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9173E6-55E4-41B5-8778-3AA5EB26AF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9173E6-55E4-41B5-8778-3AA5EB26AF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9173E6-55E4-41B5-8778-3AA5EB26AF7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
